@@ -9,3 +9,5 @@ if delivery_day > DAYS_IN_WEEK:
     delivery_day -= DAYS_IN_WEEK
 
 print(delivery_day)
+
+assert 1 <= delivery_day <= DAYS_IN_WEEK

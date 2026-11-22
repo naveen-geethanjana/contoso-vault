@@ -5,9 +5,6 @@ key: int = int(input("Key: "))
 
 ciphertext: str = ""
 
-# What if the message had symbols to begin with?
-# What if the message has lowercase letters?
-
 for letter in message:
     if "A" <= letter<= 'Z':
         shifted = ord(letter) + key
@@ -16,6 +13,8 @@ for letter in message:
         ciphertext += chr(shifted)
     else:
         ciphertext += letter
+
+print("Ciphertext:", ciphertext)
 
 plaintext: str = ""
 
@@ -28,4 +27,6 @@ for letter in ciphertext:
     else:
         plaintext += letter
 
-print(plaintext)
+print("Plaintext:", plaintext)
+
+assert message == plaintext, "The encryption-decryption loop doesn't close."
