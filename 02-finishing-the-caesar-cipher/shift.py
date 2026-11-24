@@ -47,9 +47,9 @@ for letter in ciphertext:
 
     # Reverse the shift for lowercase letters within the alphabet
     elif "a" <= letter<= 'z':
-        shifted: int = ord(letter) + key
-        if shifted > ord("z"):
-            shifted -= ALPHABET_SIZE
+        shifted: int = ord(letter) - key
+        if shifted < ord("a"):
+            shifted += ALPHABET_SIZE
         ciphertext += chr(shifted)
 
     # Preserve numbers, spaces, and special characters   
